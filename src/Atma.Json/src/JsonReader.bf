@@ -72,7 +72,11 @@ namespace Atma
 				var foundField = false;
 				for (var it in _fields)
 				{
-					if (StringView.Compare(it.Name, fieldName.text, true) == 0)
+					var name = it.Name;
+					if (let jsonProperty = it.GetCustomAttribute<JsonProperty>()) {
+						name = jsonProperty.Name;
+					}
+					if (StringView.Compare(name, fieldName.text, true) == 0)
 					{
 						foundField = true;
 

@@ -6,6 +6,15 @@ namespace Atma
 	{
 	}
 
+	[AttributeUsage(.Property | .Field, .AlwaysIncludeTarget | .ReflectAttribute, ReflectUser = .All, AlwaysIncludeUser = .None)]
+	public struct JsonProperty : Attribute {
+		public String Name;
+		public this(String name)
+		{
+		    Name = name;
+		}
+	}
+
 	public static class JsonConvert
 	{
 		public static bool Serialize<T>(T t, String json)

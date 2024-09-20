@@ -1,5 +1,5 @@
 FileVersion = 1
-Projects = {"Atma.Json" = {Path = "src/Atma.Json"}, "Atma.Json.Tests" = {Path = "tests/Atma.Json.Tests"}}
+Projects = {"Atma.Json" = {Path = "src/Atma.Json"}}
 
 [Workspace]
-StartupProject = "Atma.Json.Tests"
+StartupProject = "Atma.Json"

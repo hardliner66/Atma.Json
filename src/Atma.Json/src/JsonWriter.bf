@@ -222,8 +222,13 @@ namespace Atma
 
 			WriteObjectStart();
 
-			for (var it in _fields)
-				WriteField(it.FieldType, it.Name, (uint8*)target + it.MemberOffset);
+			for (var it in _fields) {
+				var name = it.Name;
+				if (let jsonProperty = it.GetCustomAttribute<JsonProperty>()) {
+					name = jsonProperty.Name;
+				}
+				WriteField(it.FieldType, name, (uint8*)target + it.MemberOffset);
+			}
 
 			WriteObjectEnd();
 		}
