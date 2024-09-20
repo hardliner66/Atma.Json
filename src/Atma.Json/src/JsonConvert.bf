@@ -7,7 +7,7 @@ namespace Atma
 	}
 
 	[AttributeUsage(.Property | .Field, .AlwaysIncludeTarget | .ReflectAttribute, ReflectUser = .All, AlwaysIncludeUser = .None)]
-	public struct JsonProperty : Attribute {
+	public struct JsonPropertyAttribute : Attribute {
 		public String Name;
 		public this(String name)
 		{
